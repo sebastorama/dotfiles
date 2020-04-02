@@ -9,6 +9,21 @@ git clone git@github.com:sebastorama/dotfiles ~/.dotfiles
 echo ~/.dotfiles/install.sh | sh
 ```
 
+### Other Tools and steps for setting up the environment
+
+- [oh my zsh](https://ohmyz.sh/)
+- [neovim](https://neovim.io/)
+- [easy Move+Resize (OSX)](https://github.com/dmarcotte/easy-move-resize)
+- [Alfred](https://www.alfredapp.com/)
+
+```bashscript
+# (OSX) disable mouse acceleration
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
+
+# (OSX) enable key repetition 
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 ### Uninstall Process
 
-Simply unlink all the symlinks and you're good to go
+Simply unlink all the symlinks created by install.sh and you're good to go
