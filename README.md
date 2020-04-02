@@ -13,6 +13,10 @@ echo ~/.dotfiles/install.sh | sh
 
 - [oh my zsh](https://ohmyz.sh/)
 - [neovim](https://neovim.io/)
+- [nvm - Node Version Manager](https://github.com/nvm-sh/nvm)
+- [rbenv - Ruby Version Manager](https://github.com/rbenv/rbenv)
+- [pyenv - Python Version Manager](https://github.com/pyenv/pyenv)
+
 - [easy Move+Resize (OSX)](https://github.com/dmarcotte/easy-move-resize)
 - [Alfred (OSX)](https://www.alfredapp.com/)
 - [macOS Terminal Themes](https://github.com/lysyi3m/macos-terminal-themes)
