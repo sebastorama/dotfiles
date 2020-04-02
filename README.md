@@ -15,6 +15,7 @@ echo ~/.dotfiles/install.sh | sh
 - [neovim](https://neovim.io/)
 - [easy Move+Resize (OSX)](https://github.com/dmarcotte/easy-move-resize)
 - [Alfred (OSX)](https://www.alfredapp.com/)
+- [macOS Terminal Themes](https://github.com/lysyi3m/macos-terminal-themes)
 
 ```bashscript
 # (OSX) disable mouse acceleration
