@@ -13,6 +13,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set directory^=$HOME/.vim/tmp//
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -165,7 +166,7 @@ if executable("ack")
 endif
 
 " Color scheme
-" colorscheme vividchalk
+color default
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
