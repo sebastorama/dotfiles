@@ -17,7 +17,8 @@ set nu
 set nowrap
 
 
-colorscheme base16-monokai
+colorscheme default
+set bg=light
 let g:airline_theme='base16_monokai'
 let g:airline_powerline_fonts = 1
 let g:webdevicons_enable = 1
