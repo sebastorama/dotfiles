@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/sebastorama/javascript'
+let g:netrw_dirhist_6='/Users/sebastorama/javascript/twod-ag-firebase'
+let g:netrw_dirhist_5='/Users/sebastorama/javascript/twod-ag-firebase/src'
+let g:netrw_dirhist_4='/Users/sebastorama/javascript/twod-ag-firebase/src/core/crop-seasons'
+let g:netrw_dirhist_3='/Users/sebastorama/javascript/twod-ag-firebase/src/core'
+let g:netrw_dirhist_2='/Users/sebastorama/javascript/twod-ag-firebase/src/app/components'
+let g:netrw_dirhist_1='/Users/sebastorama/javascript/twod-ag-firebase/src/app'
