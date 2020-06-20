@@ -1,10 +1,10 @@
 call plug#begin('~/.config/nvim/plugged')
-set ts=2 sts=2 sw=2 expandtab
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.ts,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
 
-
-
+Plug 'jonsmithers/vim-html-template-literals'
+Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'chriskempson/base16-vim'
@@ -18,22 +18,43 @@ Plug 'prettier/vim-prettier', {
 
 call plug#end()
 
+" === Main Configuration
 let mapleader=','
 set encoding=utf-8
 set mouse=a
 set nu
+set rnu
 set nowrap
+set ts=2 sts=2 sw=2 expandtab
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.ts,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.ts,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.ts,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+let $FZF_DEFAULT_COMMAND = "fd --type f"
 
+" === Theme Settings
 let base16colorspace=256
-color base16-irblack
-let g:airline_theme='base16_monokai'
+color base16-material-darker
 let g:airline_powerline_fonts = 1
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 
 
+" === Misc bindings
 nnoremap <leader>s :noh<cr>
 nnoremap <leader>e :NERDTreeToggle<cr>
+nnoremap <leader>c :bd<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <silent> <space>b :Buffers<cr>
+nnoremap <silent> <space>f  :Files<cr>
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> 3jzz
+nnoremap <C-k> 3kzz
+
 
 " COC configurations
 " TextEdit might fail if hidden is not set.
@@ -175,3 +196,30 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+function! EnableInlineHtmlSyntaxHighlightingForTypescript()
+  if exists('b:current_syntax')
+    let s:current_syntax=b:current_syntax
+    unlet b:current_syntax
+  endif
+  syn include @HTMLSyntax syntax/html.vim
+  if exists('s:current_syntax')
+    let b:current_syntax=s:current_syntax
+  endif
+
+  syn region typescriptTemplateString contains=@HTMLSyntax,typescriptTemplateSubstitution
+    \ containedin=typescriptTemplate,javascriptTemplate
+    \ start=+\%(<\|\w\)\@<!<\z([a-zA-Z][a-zA-Z0-9:\-.]*\)+
+    \ skip=+<!--\_.\{-}-->+
+    \ end=+</\z1\_\s\{-}>+
+    \ end=+/>+
+    \ keepend
+    \ extend
+endfunction
+
+
+augroup myTypeScriptStuff
+    autocmd!
+    autocmd FileType typescript call EnableInlineHtmlSyntaxHighlightingForTypescript()
+augroup END
