@@ -4,12 +4,13 @@
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
+exec_always --no-startup-id compton
 for_window [workspace="1"] floating enable
 
 #
 # #---Basic Definitions---# #
-smart_gaps on
-smart_borders on
+# smart_gaps on
+# smart_borders on
 set $inner_gaps 15
 set $outer_gaps 12
 set $term --no-startup-id gnome-terminal
@@ -26,7 +27,7 @@ set $hibernate sudo -A systemctl hibernate
 floating_modifier $mod
 
 # #---Gaps---# #
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 gaps inner $inner_gaps
 gaps outer $outer_gaps
 
@@ -41,7 +42,7 @@ bindsym $mod+Shift+Escape	       exec --no-startup-id $hibernate
 # bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" $reboot
 
 # space
-bindsym $mod+space 			            exec --no-startup-id $HOME/scripts/fromout/rofi-menu 
+bindsym $mod+space 			            exec --no-startup-id "rofi -show run"
 
 
 # #---Letter Key Bindings---# #
@@ -162,11 +163,10 @@ bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-not
 
 # m
 bindsym $mod+m		              exec --no-startup-id spotify
-bindsym $mod+Shift+m		        exec --no-startup-id discord
 
 
 # #---Workspace Bindings---# #
-bindsym $mod+Tab		            exec --no-startup-id $HOME/scripts/fromout/rofi-menu-windows
+bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
 bindsym $mod+Shift+Tab		      workspace next
 bindsym $mod+apostrophe		      split horizontal ;; exec $term
 bindsym $mod+slash		          split vertical ;; exec $term
@@ -188,7 +188,9 @@ set $ws10 "10"
 assign [class="Brave"] $ws1
 assign [class="Chromium"] $ws2
 assign [class="discord"] $ws8
-for_window [class="Spotify"] move to workspace $ws9
+for_window [instance="open.spotify.com"] move to workspace $ws9
+for_window [instance="web.whatsapp.com"] move to workspace $ws8
+for_window [instance="www.gmail.com"] move to workspace $ws8
 assign [class="obs"] $ws10
 
 # Assing autofloat
@@ -250,9 +252,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # Window borders
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #abb2bf
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #ff5e00 #285577 #ffffff #2e9ef4  #ff5e00
+client.focused_inactive #ff5e00 #5f676a #ffffff #484e50  #ff5e00
+client.unfocused        #333333 #222222 #888888 #292d2e  #333333
+client.urgent           #2f343a #900000 #ffffff #900000  #2f343a
+client.placeholder      #000000 #0c0c0c #ffffff #000000  #000000
 client.background       #ffffff
