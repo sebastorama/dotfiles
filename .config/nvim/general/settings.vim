@@ -21,7 +21,7 @@ set splitbelow                          " Horizontal splits will automatically b
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
 let base16colorspace=256
-color base16-irblack
+color base16-onedark
 set conceallevel=0                      " So that I can see `` in markdown files
 set tabstop=2                           " Insert 2 spaces for a tab
 set shiftwidth=2                        " Change the number of space characters inserted for indentation
@@ -35,6 +35,7 @@ set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set showtabline=2                       " Always show tabs 
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
+set scrolloff=10
 
 " CoC recommended settings
 set cmdheight=2                         " More space for displaying messages

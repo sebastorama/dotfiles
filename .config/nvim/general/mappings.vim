@@ -31,13 +31,7 @@ nnoremap <leader>s :noh<cr>
 nnoremap <leader>e :NERDTreeToggle<cr>
 
 " Close current buffer
-nnoremap <leader>c :bd<cr>
-
-" Write to file
-nnoremap <leader>w :w<cr>
-
-" Quit window
-nnoremap <leader>q :q<cr>
+nnoremap <leader>c :bp<bar>sp<bar>bn<bar>bd<cr>
 
 " FZF Buffers
 nnoremap <silent> <space>b :Buffers<cr>

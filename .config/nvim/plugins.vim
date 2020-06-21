@@ -48,4 +48,7 @@ Plug 'alvan/vim-closetag'
 " Emmet
 Plug 'mattn/emmet-vim'
 
+" Vim wiki
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
