@@ -49,4 +49,4 @@
     tool = vimdiff
 
 [core]
-    editor = vim
+    editor = nvim
