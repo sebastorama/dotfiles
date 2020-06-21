@@ -31,20 +31,20 @@ background_opacity: 1.0
 
 font:
   normal:
-    family: "Hack"
-    style: Regular
+    family: "SFMono Nerd Font"
+    style: Light
   bold:
-    family: "Hack"
+    family: "SFMono Nerd Font"
     style: Bold
   italic:
-    family: "Hack"
+    family: "SFMono Nerd Font"
     style: Italic
   bold_italic:
-    family: "Hack"
+    family: "SFMono Nerd Font"
     style: Bold Italic
 
   # Point size
-  size: 22.0
+  size: 12.0
 
   offset:
     x: 0

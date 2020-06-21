@@ -1,5 +1,4 @@
 " === Main Configuration
-let mapleader=','
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.ts,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
 let $FZF_DEFAULT_COMMAND = "fd --type f"

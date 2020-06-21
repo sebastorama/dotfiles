@@ -1,3 +1,4 @@
+let mapleader=' '
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -34,10 +35,10 @@ nnoremap <leader>e :NERDTreeToggle<cr>
 nnoremap <leader>c :bp<bar>sp<bar>bn<bar>bd<cr>
 
 " FZF Buffers
-nnoremap <silent> <space>b :Buffers<cr>
+nnoremap <leader>b :Buffers<cr>
 
 " FZF Files
-nnoremap <silent> <space>f  :Files<cr>
+nnoremap <leader>f  :Files<cr>
 
 nnoremap <C-J> 3jzz
 nnoremap <C-K> 3kzz
